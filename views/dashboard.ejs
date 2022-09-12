@@ -1,0 +1,87 @@
+<%- include('partials/header') -%>
+<div>
+  <div>
+      <div>
+          <div class="user-info">
+              <p><strong>Username</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Log Out</a>
+          </div>
+
+<!--create checkin-->
+<div class="checkin-form">
+          <div class="mt-5">
+            <h2>Add a Check-In</h2>
+            <form action="/post/createPost" method="POST" >
+              <div class="mb-3">
+                  <label for="status" class="form-label">How are you doing today?</label>
+                  <select class="form-control" id="status" name="status">
+                  <option value="default" default>Choose an option</option>
+                    <option value="I'm doing really great!">I'm doing really great!</option>
+                    <option value="I'm doing pretty good.">I'm doing pretty good.</option>
+                    <option value="I'm doing okay, I guess.">I'm doing okay, I guess.</option>
+                    <option value="I'm starting to struggle.">I'm starting to struggle.</option>
+                    <option value="I'm having a really hard time.">I'm having a really hard time.</option>
+                    <option value="I need to reach out for support.">I need to reach out for support.</option>
+                  </select>
+              </div>
+              <div class="mb-3">
+                <label for="hoursOfSleep" class="form-label">How many hours of sleep did you get last night?</label>
+                <select class="form-control" id="hoursOfSleep" name="hoursOfSleep">
+                  <option value="default" default>Choose an option</option>
+                  <option value="<1"><1 </option>
+                  <option value="1-4">1-4</option>
+                  <option value="5-8">5-8</option>
+                  <option value="9-12">9-12</option>
+                  <option value="12<">12<</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="gratitude" class="form-label">What is one thing you're grateful for today?</label>
+                <textarea class="form-control" id="gratitude" name="gratitude"
+                  placeholder="Take a moment of gratitude..."></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="lookingForward" class="form-label">What is one thing you're looking forward to?</label>
+                <textarea class="form-control" id="lookingForward" name="lookingForward"
+                  placeholder="I'm hype for..."></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="selfLove" class="form-label">What is one thing you love about yourself?</label>
+                <textarea class="form-control" id="selfLove" name="selfLove"
+                  placeholder="I love..."></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="caption" class="form-label">Vent Sesh:</label>
+                <textarea class="form-control" id="caption" name="caption" placeholder="What's going on in the life of <%= user.userName %>?"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>
+</div>
+<!--create checkin-->
+
+<!--see all posts-->
+          <div class="mt-5 priors">
+            <h3>See all prior check-ins: </h3>
+            <ul>
+              <% posts.reverse().forEach((post)=> { %>
+                <li class="prior-checkins">
+                  <h2><b>Check-in for:</b> <%= post.formatDate('createdAt') %></h2>
+                  <p><b>How I'm doing:</b> <%= post.status %> </p>
+                  <p><b>Hours of Sleep:</b> <%= post.hoursOfSleep %></p>
+                  <p><b>What I'm thankful for:</b><%= post.gratitude %></p>
+                  <p><b>What I'm looking forward to:</b> <%= post.lookingForward %></p>
+                  <p><b>What I love about myself:</b> <%= post.selfLove %></p>
+                  <p><b>Vent Sesh:</b> <%= post.caption %></p>    
+                </li>
+              <% }) %>
+            </ul>
+          </div>
+<!--see all posts-->
+
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>
