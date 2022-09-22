@@ -32,6 +32,7 @@
         <!-- Section: Text -->
 
         <!-- Section: Links -->
+        <% if(typeof user !== 'undefined'){ %> 
         <section class="">
             <!--Grid row-->
             <div class="row">
@@ -47,7 +48,7 @@
                             <a href="resources" class="text-white">Resources</a>
                         </li>
                         <li>
-                        <!--      <a href="#!" class="text-white">Counselor Chat</a>-->
+                        <!--<a href="#!" class="text-white">Counselor Chat</a>-->
                         </li>
                     </ul>
                 </div>
@@ -74,7 +75,30 @@
         <!-- Section: Links -->
     </div>
     <!-- Grid container -->
+    <% }else{ %>
+         <section class="">
+                <!--Grid column-->
+                <div class="footer-col-lf text-center">
+                    <h5 class="text-uppercase">ABOUT mindFULL</h5>
 
+                    <ul class="list-unstyled mb-2">
+                        <li>
+                            <a href="/about" class="text-white">About</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/emlegweak/mindFULL" class="text-white">Code Base</a>
+                        </li>
+                      
+                    </ul>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
+        <% } %> 
     <!-- Copyright -->
     <div class="text-center p-3 mb-0" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2022 Copyright:
