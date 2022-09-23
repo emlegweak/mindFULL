@@ -3,9 +3,9 @@ module.exports = {
     res.render("index.ejs", {user: req.user});
   },
   getResources: (req, res) => {
-    res.render("resources.ejs");
+    res.render("resources.ejs", {user: req.user});
   },
   getAbout: (req, res) => {
-    res.render("about.ejs");
+    res.render("about.ejs", {user:req.user});
   },
 };
