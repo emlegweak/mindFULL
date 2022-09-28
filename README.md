@@ -6,16 +6,16 @@ Through my experience in education and as an administrative professional in pedi
 
 Utilizing the MERN tech stack, I am developing an application called MindFULL, a platform designed as supplemental technology for existing learning management systems to provide students with streamlined access to mental health resources, the ability to self-assess their current state, and the option to communicate directly with their school counselor.
 
-## Version 1.0.0 is live! 
+## Version 1.1 is live! 
 
 Students can create an account, complete a daily mental health log, and view their past logs. 
+Admins now have permissions to create, update, delete resource posts. 
 
-## Currently working on V1.0.0
+## Currently working on V1.1
 
 Now that the MVP is complete, this phase includes the following features and capabilities:
- - Add admin role for school counselor
- - Add resource post permissions for school counselor
  - Add instant messaging between students and school counselor
+ - Add Google OAuth back into project for Google Classroom integration
 
  ## Stretch goals
 
