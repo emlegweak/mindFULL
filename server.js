@@ -10,6 +10,7 @@ const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
+const resourceRoutes = require("./routes/resources")
 const cors = require("cors")
 const passportLocalMongoose = require("passport-local-mongoose")
 const async=require("async")
@@ -68,6 +69,8 @@ app.use(flash());
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
 app.use("/post", postRoutes);
+app.use("/resource", resourceRoutes)
+
 
 //Server Running
 app.listen(process.env.PORT, () => {

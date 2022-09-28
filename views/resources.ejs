@@ -1,8 +1,19 @@
 <%- include('partials/header') -%>
-<main>
-    <div class="container resources">
-        <img src="../imgs/open-doodles-clumsy.svg" alt="open doodles clumsy">
-        <h2>This page is coming soon! Check back in a few.</h2>
-    </div>
-</main>
+<h1 class="mt-5 ms-5">Mental Health Resources</h1>
+<p class="ms-5">Check out the resources from your school counselor below:</p>
+<div class="mt-5 priors">
+            <% if(resources.length === 0){ %>
+                <h2>No resource posts to display. Create one above!</h2>
+            <% }else{ %>
+            <ul class="resources-list">
+              <% resources.reverse().forEach((resource)=> { %>
+                <li class="prior-checkins">
+                  <a href="/resource/<%=resource._id%>" class="text-decoration-none text-reset">
+                  <h2><b><%= resource.title %></b></h2>
+                  <p><%= resource.formatDate('createdAt') %></p>
+                  </a>
+                </li>
+              <% }) }%>
+            </ul>
+          </div>
 <%- include('partials/footer') -%>

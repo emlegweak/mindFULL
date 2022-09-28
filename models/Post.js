@@ -35,10 +35,10 @@ const PostSchema = new mongoose.Schema({
 });
 
 PostSchema.methods.formatDate = function(dateProperty){
-  const newDate = new Date(this[dateProperty])
-  let formattedDate = `${newDate.getFullYear()}-`;
-    formattedDate += `${`0${newDate.getMonth() + 1}`.slice(-2)}-`;  
-    formattedDate += `${`0${newDate.getDate()}`.slice(-2)}`;        
+  const newDate = new Date(this[dateProperty]) 
+  let formattedDate = `${`0${newDate.getMonth() + 1}`.slice(-2)}-`
+    formattedDate += `${`0${newDate.getDate()}`.slice(-2)}-`
+    formattedDate += `${newDate.getFullYear()}`        
   return formattedDate;
 }
 

@@ -1,0 +1,51 @@
+<%- include('partials/header') -%>
+<div>
+  <div>
+      <div>
+          <div class="user-info">
+              <h1>Hi <%=user.userName%>, welcome to mindFULL</h1>
+          </div>
+<!--create resource-->
+<div class="checkin-form">
+          <div class="mt-5">
+            <h2>Add a Resource Post</h2>
+            <form action="/resource/createResource" method="POST" >
+                <div class="mb-3">
+                    <label for="title" class="form-label">Enter Resource Title</label>
+                    <textarea class="form-control" id="title" name="title"
+                      placeholder="Resource Title"></textarea>
+                </div>
+                <div class="mb-3">
+                <label for="caption" class="form-label">Add Resource Text</label>
+                <textarea class="form-control" id="caption" name="caption" placeholder="Enter resource text..."></textarea>
+              </div>
+              <div class="mb-3">
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>
+</div>
+<!--create resource post-->
+
+<!--see all resource posts-->
+          <div class="mt-5 priors">
+            <% if(resources.length === 0){ %>
+                <h2>No resource posts to display. Create one above!</h2>
+            <% }else{ %>  
+            <h3>See all prior resource posts: </h3>
+            <ul>
+              <% resources.reverse().forEach((resource)=> { %>
+                <li class="prior-checkins">
+                  <h2><b>Resource for:</b> <%= resource.formatDate('createdAt') %></h2>
+                  <p><b>Title:</b> <%= resource.title %> </p>
+                  <p><b>Resource Text:</b> <%= resource.caption %></p>
+                </li>
+              <% }) }%>
+            </ul>
+          </div>
+<!--see all resource posts-->
+
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>

@@ -37,9 +37,13 @@ exports.postLogin = (req, res, next) => {
     req.logIn(user, (err) => {
       if (err) {
         return next(err);
-      }
+      }else if(req.user.isAdmin){
+      req.flash("success", { msg: "Success! You are logged in." });
+      res.redirect(req.session.returnTo || "/resource/resource-dashboard");
+      }else{
       req.flash("success", { msg: "Success! You are logged in." });
       res.redirect(req.session.returnTo || "/dashboard");
+      }
     });
   })(req, res, next);
 };

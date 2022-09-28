@@ -19,8 +19,6 @@
         </section>
         <!-- Section: Social media -->
 
-
-
         <!-- Section: Text 
         <section class="mb-4">
             <p>
@@ -32,7 +30,35 @@
         <!-- Section: Text -->
 
         <!-- Section: Links -->
-        <% if(typeof user !== 'undefined'){ %> 
+    <% if(typeof user !== 'undefined' && user.isAdmin === true){ %> 
+        <section class="">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="footer-col-lf text-center">
+                    <h5 class="text-uppercase">QUICK LINKS</h5>
+
+                    <ul class="list-unstyled mb-2">
+                        <li>
+                            <a href="/resource/resource-dashboard" class="text-white">Resource Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="/resources" class="text-white">Resource Feed</a>
+                        </li>
+                        <li>
+                        <!--<a href="#!" class="text-white">Counselor Chat</a>-->
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+    </div>
+    <% } %> 
+    <!-- Grid container -->
+    <% if(typeof user !== 'undefined' && user.isAdmin === false){ %> 
         <section class="">
             <!--Grid row-->
             <div class="row">
