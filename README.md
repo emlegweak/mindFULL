@@ -11,7 +11,7 @@ Utilizing the MERN tech stack, I am developing an application called MindFULL, a
 Students can create an account, complete a daily mental health log, and view their past logs. 
 Admins now have permissions to create, update, delete resource posts. 
 
-## Currently working on V1.1
+## Currently working on V1.2
 
 Now that the MVP is complete, this phase includes the following features and capabilities:
  - Add instant messaging between students and school counselor
