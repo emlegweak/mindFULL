@@ -1,5 +1,7 @@
 # mindFULL 
 
+*View at https://mindfull.cyclic.app/ - mindfull.onrender.com is still active but render is not displaying the deployed site, unfortunately. 
+
 ## Purpose
 
 Through my experience in education and as an administrative professional in pediatrics, I observed a lack of resources for education and support with regard to children and their mental health that became more apparent as the COVID-19 pandemic necessitated a transition to remote learning.
