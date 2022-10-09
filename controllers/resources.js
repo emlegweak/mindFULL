@@ -54,7 +54,7 @@ module.exports = {
   updateResource: async(req,res) =>{
     try {
       let resource = await Resource.findById(req.params.id);
-    await Resource.findByIdAndUpdate(resource, {
+    await Resource.findByIdAndUpdate(resource.id, {
       title: req.body.title, 
       caption: req.body.caption,
     })
