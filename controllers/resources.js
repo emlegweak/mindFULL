@@ -1,6 +1,7 @@
 const Resource = require("../models/Resource");
 
 module.exports = {
+  //GET resource dashboard (admin)
   getResourceDashboard: async (req, res) => {
     try {
       const resources = await Resource.find({ user: req.user.id });
@@ -9,6 +10,7 @@ module.exports = {
       console.log(err);
     }
   },
+  //GET resource feed (all users)
   getResourceFeed: async(req,res) =>{
     try {
       const resources = await Resource.find().sort({ createdAt: "desc" }).lean();
@@ -17,6 +19,7 @@ module.exports = {
       console.log(err);
     }
   },
+  //GET individual resource by id (all users)
   getResource: async (req, res) => {
     try {
       const resource = await Resource.findById(req.params.id);
@@ -25,6 +28,7 @@ module.exports = {
       console.log(err);
     }
   },
+  //POST create new resource (admin)
   createResource: async (req, res) => {
     try {
       await Resource.create({
@@ -38,11 +42,41 @@ module.exports = {
       console.log(err);
     }
   },
+  //GET resource to update (admin)
+  editResource: async (req,res) =>{
+    try {
+      let resource = await Resource.findById({ _id: req.params.id });
+      res.render("edit.ejs", {
+        resource: resource,
+      })
+      console.log("Resource has been updated!")
+      res.redirect("/resource/resource-dashboard");
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  updateResource: async(req,res) =>{
+    try {
+      await Resource.findOneAndUpdate({
+        _id:req.params.id
+      }, {
+        title: req.body.title,
+        caption: req.body.caption,
+      }, {
+        new:true
+      })
+      console.log("Resource updated")
+      res.redirect(`/resource/resource-dashboard`)
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  //DELETE resource (admin)
   deleteResource: async (req, res) => {
     try {
-      // Find post by id
+      // Find resource by id
       let resource = await Resource.findById({ _id: req.params.id });
-      // Delete post from db
+      // Delete resource from db
       await Resource.remove({ _id: req.params.id });
       console.log("Deleted Resource");
       res.redirect("/resource/resource-dashboard");

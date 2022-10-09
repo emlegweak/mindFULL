@@ -1,24 +1,19 @@
 <%- include('partials/header') -%>
-<div class="container">
-    <div class="col-3 mt-5">
+<main class="container">
+    <div>
       <h2><%= resource.title %></h2>
       <p><%= resource.caption %></p>
-      <div class="col-6">
-        <%if(resource.user == user.id){ %>
-        <form action="/resource/deleteResource/<%= resource.id %>?_method=DELETE" method="POST" class="col-3">
-          <button class="btn btn-danger fa fa-trash" type="submit"></button>
-        </form>
-        <%}%>
-      </div>
     </div>
     <div class="col-6 mt-5">
-      <a class="btn btn-primary mb-2" href="/dashboard">Return to Dashboard</a>
-      <a class="btn btn-primary mb-2" href="/resources">Return to Resources Feed</a>
       <% if(user.isAdmin === true){ %>
       <a class="btn btn-primary mb-2" href="/resource/resource-dashboard">Return to Resource Dashboard</a>
-      <% } %>  
+      <a class="btn btn-primary mb-2" href="/resources">Return to Resources Feed</a>
+      <% }else{ %>
+      <a class="btn btn-primary mb-2" href="/dashboard">Return to Dashboard</a>
+      <a class="btn btn-primary mb-2" href="/resources">Return to Resources Feed</a>
+        <% } %> 
     </div>
   </div>
-</div>
+</main>
 
 <%- include('partials/footer') -%>

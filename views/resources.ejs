@@ -1,4 +1,5 @@
 <%- include('partials/header') -%>
+<main>
 <h1 class="mt-5 ms-5">Mental Health Resources</h1>
 <p class="ms-5">Check out the resources from your school counselor below:</p>
 <div class="mt-5 priors">
@@ -8,10 +9,11 @@
                 <li class="prior-checkins">
                   <a href="/resource/<%=resource._id%>" class="text-decoration-none text-reset">
                   <h2><b><%= resource.title %></b></h2>
-                  <p><%= resource.caption %></p>
+                  <p>Click to read more...</p>
                   </a>
                 </li>
               <% }) }%>
             </ul>
           </div>
+</main>
 <%- include('partials/footer') -%>

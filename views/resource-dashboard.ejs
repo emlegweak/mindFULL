@@ -1,5 +1,5 @@
 <%- include('partials/header') -%>
-<div>
+<main>
   <div>
       <div>
           <div class="user-info">
@@ -36,9 +36,17 @@
             <ul>
               <% resources.reverse().forEach((resource)=> { %>
                 <li class="prior-checkins">
-                  <h2><b>Resource for:</b> <%= resource.formatDate('createdAt') %></h2>
+                  <h2><b>Resource for:</b> <%= resource.formatResourceDate('createdAt') %></h2>
                   <p><b>Title:</b> <%= resource.title %> </p>
                   <p><b>Resource Text:</b> <%= resource.caption %></p>
+                        <div class="col-6">
+                  <form action="/resource/deleteResource/<%= resource.id %>?_method=DELETE" method="POST" class="col-3">
+                    <button class="btn btn-danger fa fa-trash" type="submit"></button>
+                  </form>
+                  <form action="/resource/updateResource/<%= resource.id %>?_method=PUT" method="PUT" class="col-3">
+                    <button class="btn fa fa-pencil" type="submit"></button>
+                  </form>
+      </div>
                 </li>
               <% }) }%>
             </ul>
@@ -47,5 +55,5 @@
 
     </div>
   </div>
-</div>
+</main>
 <%- include('partials/footer') -%>
