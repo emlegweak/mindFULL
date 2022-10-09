@@ -11,7 +11,7 @@ module.exports = {
   },
   getResourceFeed: async(req,res) =>{
     try {
-      const resources = await Resource.find({ user: req.user.id });
+      const resources = await Resource.find().sort({ createdAt: "desc" }).lean();
       res.render("resources.ejs", {resources:resources, user: req.user})
     } catch (error) {
       console.log(err);

@@ -19,7 +19,7 @@ const ResourceSchema = new mongoose.Schema({
   },
 });
 
-ResourceSchema.methods.formatDate = function(dateProperty){
+ResourceSchema.methods.formatResourceDate = function(dateProperty){
   const newDate = new Date(this[dateProperty]) 
   let formattedDate = `${`0${newDate.getMonth() + 1}`.slice(-2)}-`
     formattedDate += `${`0${newDate.getDate()}`.slice(-2)}-`
