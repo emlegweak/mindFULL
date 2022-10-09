@@ -4,7 +4,7 @@
 <p class="ms-5">Check out the resources from your school counselor below:</p>
 <div class="mt-5 priors">
             <ul class="resources-list">
-              <% resources.reverse().forEach((resource)=> { %>
+              <% resources.forEach((resource)=> { %>
                 <li class="prior-checkins">
                   <a href="/resource/<%=resource._id%>" class="text-decoration-none text-reset">
                   <h2><b><%= resource.title %></b></h2>

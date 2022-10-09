@@ -4,6 +4,7 @@ const ResourceSchema = new mongoose.Schema({
   title:{
     type: String, 
     required: true,
+    trim: true,
   },
   caption: {
     type: String,
@@ -25,6 +26,10 @@ ResourceSchema.methods.formatResourceDate = function(dateProperty){
     formattedDate += `${`0${newDate.getDate()}`.slice(-2)}-`
     formattedDate += `${newDate.getFullYear()}`        
   return formattedDate;
+}
+
+ResourceSchema.methods.stripTags = function(input){
+  return input.replace(/<(?:.|\n)*?>/gm, '')
 }
 
 module.exports = mongoose.model("Resource", ResourceSchema);

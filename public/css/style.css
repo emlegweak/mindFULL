@@ -134,3 +134,21 @@ ABOUT
     border-radius: .3125rem;
 }
 
+.resource-form{
+    margin: 1rem 2rem;
+    padding: 1rem 2rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 .375rem .75rem -.125rem, rgba(0, 0, 0, 0.3) 0 .1875rem .4375rem -.1875rem;
+}
+
+.resource-form h2{
+    text-align: center;
+}
+
+.resource-form label{
+    font-weight: 500;
+    margin-top: .5rem;
+}
+
+.resource-form option{
+    font-size: .875rem;
+}

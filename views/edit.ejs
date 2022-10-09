@@ -1,13 +1,13 @@
 <%- include('partials/header') -%>
 <main>
 <!--edit resource-->
-<div class="checkin-form">
+<div class="resource-form">
           <div class="mt-5">
             <h2>Edit Resource Post</h2>
             <form action="/resource/updateResource/<%=resource.id%>?_method=PUT" method="POST" >
                 <div class="mb-3">
                     <label for="title" class="form-label">Edit Resource Title</label>
-                    <textarea class="form-control" id="title" name="title"
+                    <textarea class="form-control"  id="title" name="title"
                       ><%= resource.title %></textarea>
                 </div>
                 <div class="mb-3">
@@ -22,4 +22,11 @@
 </div>
 <!--edit resource -->
 </main>
+
+ <script type="text/javascript"> 
+      CKEDITOR.replace("caption", {
+        plugins: 'wysiwygarea, toolbar, basicstyles, link', 
+            removePlugins: 'htmlwriter'
+      })
+    </script>
 <%- include('partials/footer') -%>

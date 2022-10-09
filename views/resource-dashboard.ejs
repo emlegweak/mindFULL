@@ -7,7 +7,7 @@
               <p>Here on mindFULL's admin resource dashboard, you can create, update, and delete Mental Health Resource Posts for students to view.</p>
           </div>
 <!--create resource-->
-<div class="checkin-form">
+<div class="resource-form">
           <div class="mt-5">
             <h2>Add a Resource Post</h2>
             <form action="/resource/createResource" method="POST" >
@@ -18,7 +18,7 @@
                 </div>
                 <div class="mb-3">
                 <label for="caption" class="form-label">Add Resource Text</label>
-                <textarea class="form-control" id="caption" name="caption" placeholder="Enter resource text..."></textarea>
+                <textarea id="caption" name="caption" placeholder="Enter resource text..."></textarea>
               </div>
               <div class="mb-3">
               <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
@@ -39,7 +39,7 @@
                 <li class="prior-checkins">
                   <h2><b>Resource for:</b> <%= resource.formatResourceDate('createdAt') %></h2>
                   <p><b>Title:</b> <%= resource.title %> </p>
-                  <p><b>Resource Text:</b> <%= resource.caption %></p>
+                  <p class="fr-view"><b>Resource Text:</b> <%= resource.stripTags(resource.caption) %></p>
                     <div class="d-inline-block">
                        <form action="/resource/updateResource/<%= resource.id %>?_method=PUT" class="col-3">
                         <button class="btn btn-primary fa fa-pencil" type="submit"></button>
@@ -59,4 +59,10 @@
     </div>
   </div>
 </main>
+
+ <script type="text/javascript"> 
+      CKEDITOR.replace("caption", {
+        plugins: 'wysiwygarea, toolbar, basicstyles, link', 
+      })
+    </script>
 <%- include('partials/footer') -%>
