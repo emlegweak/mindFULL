@@ -45,26 +45,19 @@ module.exports = {
   //GET resource to update (admin)
   editResource: async (req,res) =>{
     try {
-      let resource = await Resource.findById({ _id: req.params.id });
-      res.render("edit.ejs", {
-        resource: resource,
-      })
-      console.log("Resource has been updated!")
-      res.redirect("/resource/resource-dashboard");
+      let resource = await Resource.findById(req.params.id);
+      res.render("edit.ejs", {resource: resource})
     } catch (error) {
       console.log(error)
     }
   },
   updateResource: async(req,res) =>{
     try {
-      await Resource.findOneAndUpdate({
-        _id:req.params.id
-      }, {
-        title: req.body.title,
-        caption: req.body.caption,
-      }, {
-        new:true
-      })
+      let resource = await Resource.findById(req.params.id);
+    await Resource.findByIdAndUpdate(resource, {
+      title: req.body.title, 
+      caption: req.body.caption,
+    })
       console.log("Resource updated")
       res.redirect(`/resource/resource-dashboard`)
     } catch (error) {

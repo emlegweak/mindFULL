@@ -4,6 +4,7 @@
       <div>
           <div class="user-info">
               <h1>Hi <%=user.userName%>, welcome to mindFULL</h1>
+              <p>Here on mindFULL's admin resource dashboard, you can create, update, and delete Mental Health Resource Posts for students to view.</p>
           </div>
 <!--create resource-->
 <div class="checkin-form">
@@ -39,14 +40,16 @@
                   <h2><b>Resource for:</b> <%= resource.formatResourceDate('createdAt') %></h2>
                   <p><b>Title:</b> <%= resource.title %> </p>
                   <p><b>Resource Text:</b> <%= resource.caption %></p>
-                        <div class="col-6">
-                  <form action="/resource/deleteResource/<%= resource.id %>?_method=DELETE" method="POST" class="col-3">
-                    <button class="btn btn-danger fa fa-trash" type="submit"></button>
-                  </form>
-                  <form action="/resource/updateResource/<%= resource.id %>?_method=PUT" method="PUT" class="col-3">
-                    <button class="btn fa fa-pencil" type="submit"></button>
-                  </form>
-      </div>
+                    <div class="d-inline-block">
+                       <form action="/resource/updateResource/<%= resource.id %>?_method=PUT" method="PUT" class="col-3">
+                        <button class="btn btn-primary fa fa-pencil" type="submit"></button>
+                      </form>
+                    </div>
+                    <div class="d-inline-block">
+                      <form action="/resource/deleteResource/<%= resource.id %>?_method=DELETE" method="POST" class="col-3">
+                        <button class="btn btn-danger fa fa-trash" type="submit"></button>
+                      </form>
+                    </div>
                 </li>
               <% }) }%>
             </ul>

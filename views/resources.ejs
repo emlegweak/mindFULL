@@ -3,7 +3,6 @@
 <h1 class="mt-5 ms-5">Mental Health Resources</h1>
 <p class="ms-5">Check out the resources from your school counselor below:</p>
 <div class="mt-5 priors">
-        <% for(let i=0; i<resources.length; i++) {%>
             <ul class="resources-list">
               <% resources.reverse().forEach((resource)=> { %>
                 <li class="prior-checkins">
@@ -12,7 +11,7 @@
                   <p>Click to read more...</p>
                   </a>
                 </li>
-              <% }) }%>
+              <% }) %>
             </ul>
           </div>
 </main>
