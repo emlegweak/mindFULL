@@ -23,10 +23,11 @@
 <!--edit resource -->
 </main>
 
- <script type="text/javascript"> 
+<script type="text/javascript"> 
       CKEDITOR.replace("caption", {
-        plugins: 'wysiwygarea, toolbar, basicstyles, link', 
-            removePlugins: 'htmlwriter'
+        plugins: 'wysiwygarea, toolbar, basicstyles, link, list, font, format', 
+            removePlugins: 'scayt,', 
+            disableNativeSpellChecker: false,
       })
     </script>
 <%- include('partials/footer') -%>
