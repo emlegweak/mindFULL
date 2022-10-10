@@ -28,8 +28,9 @@ ResourceSchema.methods.formatResourceDate = function(dateProperty){
   return formattedDate;
 }
 
-ResourceSchema.methods.stripTags = function(input){
-  return input.replace(/<(?:.|\n)*?>/gm, '')
-}
+//strip tags from resource textarea HTML elements
+//ResourceSchema.methods.stripTags = function(input){
+//  return input.replace(/<(?:.|\n)*?>/gm, '')
+//}
 
 module.exports = mongoose.model("Resource", ResourceSchema);
