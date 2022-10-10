@@ -70,7 +70,7 @@ module.exports = {
       // Find resource by id
       let resource = await Resource.findById({ _id: req.params.id });
       // Delete resource from db
-      await Resource.remove({ _id: req.params.id });
+      await Resource.deleteOne({ _id: req.params.id });
       console.log("Deleted Resource");
       res.redirect("/resource/resource-dashboard");
     } catch (err) {

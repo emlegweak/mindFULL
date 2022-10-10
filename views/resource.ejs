@@ -2,7 +2,7 @@
 <main class="container">
     <div>
       <h2><%= resource.title %></h2>
-      <p><%= resource.caption %></p>
+      <p><%- resource.caption %></p>
     </div>
     <div class="col-6 mt-5">
       <% if(user.isAdmin === true){ %>
