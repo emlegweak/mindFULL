@@ -6,7 +6,7 @@
 
 Through my experience in education and as an administrative professional in pediatrics, I observed a lack of resources for education and support with regard to children and their mental health that became more apparent as the COVID-19 pandemic necessitated a transition to remote learning.
 
-Utilizing the MERN tech stack, I am developing an application called MindFULL, a platform designed as supplemental technology for existing learning management systems to provide students with streamlined access to mental health resources, the ability to self-assess their current state, and the option to communicate directly with their school counselor.
+Utilizing the MERN tech stack, I developed an application called MindFULL, a platform designed as supplemental technology for existing learning management systems to provide students with streamlined access to mental health resources, the ability to self-assess their current state, and the option to communicate directly with their school counselor.
 
 ## Version 1.1 is live! 
 
